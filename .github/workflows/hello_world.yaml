@@ -1,0 +1,27 @@
+name: Hello world workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-22.04
+    steps:
+      # the `checkout` action makes the code available (i.e. checks out the repo)
+      - uses: actions/checkout@v2 # any publicly available action
+      - name: hello world
+        run: echo "Hello world"
+        shell: bash
+
+  goodbye:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: goodbye world
+        run: echo "Goodbye world"
+        shell: bash
