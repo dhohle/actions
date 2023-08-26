@@ -36,6 +36,6 @@ jobs:
             '
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Created by GitHub only for this repo and only for this run
-          ORGANIZATION: ${{ github.event.organisation.login }}
+          ORGANIZATION: ${{ vars.ORGANIZATION_VAR }}
           REPOSITORY: ${{ github.event.repository.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
